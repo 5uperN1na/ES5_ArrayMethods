@@ -38,9 +38,9 @@ let evens = num1.filter((i) => {
 });
 
 //console log each value in the array
-console.log(num1);  
+console.log(num1);
 //console log even values in the array
-console.log(evens);  
+console.log(evens);
 
 //created an array with different values
 let num2 = [1, 6, 7, 20];
@@ -51,12 +51,66 @@ let odd = num2.filter((i) => {
 });
 
 //console log each value in the array
-console.log(num2);  
+console.log(num2);
 //console log even values in the array
-console.log(odd);  
+console.log(odd);
 
 //Array.forEach()
 //Executes a callback for each item in the array.
 //The forEach method can be used instead of a for loop. 
 //The code is easier to read and follow as it makes logical sense. 
 //You are running a callback function "for each" item in the array.
+
+let value = [5, 8, 12, 34, 55];
+
+value.forEach((value, index) => {
+    console.log(`The number at index ${index} is ${value}`);
+});
+
+//indexOf Array Method
+//The indexOf array method returns the index position of the array where the supplied value is found. 
+//If the item is not found, -1 is returned. Using this method instead of creating a loop and searching for an element yourself can save you time and make your code cleaner.
+
+let friends = ['Nancy', 'Josh', 'Jake', 'Joanne'];
+
+let f = friends.indexOf('Jane');
+console.log(f);
+f = friends.indexOf('Jake');
+console.log(f);
+
+//lastIndexOf Array Method
+//The lastIndexOf array method behaves similarly to indexOf, except that it will find the last index of the array at which an element appears. 
+//Using this method instead of creating a loop and searching for a value yourself can save you time and make your code cleaner.
+
+let friends2 = ['Nancy', 'Josh', 'Jake', 'Joanne'];
+
+let f2 = friends2.lastIndexOf('Jane');
+console.log(f2);
+f2 = friends2.lastIndexOf('Joanne');
+console.log(f2);
+
+//Array.map()
+//Calls a function for every element in an array and returns a new array with the return value of each function call.
+
+let names = [
+    {
+        fname: 'Paula',
+        age: 41
+    },
+    {
+        fname: 'Josie',
+        age: 22
+    },
+    {
+        fname: 'Patty',
+        age: 33
+    }
+];
+
+
+let doubleAge = names.map((age) => {
+    return doubleAge * 2;
+});
+
+console.log(names.age); // [1, 3, 5, 7, 9]
+console.log(doubleAge); // [2, 6, 10, 14, 18]
