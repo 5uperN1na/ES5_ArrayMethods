@@ -109,8 +109,37 @@ let names = [
 
 
 let doubleAge = names.map((age) => {
-    return doubleAge * 2;
+    return age * 2;
+
 });
 
-console.log(names.age); // [1, 3, 5, 7, 9]
-console.log(doubleAge); // [2, 6, 10, 14, 18]
+console.log(doubleAge);
+
+
+let age = [41, 40, 22];
+
+let dbleAge = age.map((age) => {
+    return age * 2;
+
+});
+
+//console.log(names.age);  
+console.log(dbleAge);
+
+
+//Array.some()
+//The some() method is available on all Arrays. It is used to test whether at least one of items in an array passes a specified test. 
+//The test is performed by executing a function that you pass into the some() method for the items in the Array.
+
+let noEvens = [1, 3, 5];
+let oneEven = [1, 3, 4, 5];
+
+function isEven(num) {
+    console.log(num);
+
+    return num % 2 === 0;
+}
+
+console.log(noEvens.some(isEven)); // false
+console.log(oneEven.some(isEven)); // true
+
