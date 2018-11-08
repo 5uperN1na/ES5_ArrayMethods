@@ -108,23 +108,12 @@ let names = [
 ];
 
 
-let doubleAge = names.map((age) => {
-    return age * 2;
+let doubleAge = names.map((name) => {
+    return name.age * 2;
 
 });
 
 console.log(doubleAge);
-
-
-let age = [41, 40, 22];
-
-let dbleAge = age.map((age) => {
-    return age * 2;
-
-});
-
-//console.log(names.age);  
-console.log(dbleAge);
 
 
 //Array.some()
@@ -143,3 +132,69 @@ function isEven(num) {
 console.log(noEvens.some(isEven)); // false
 console.log(oneEven.some(isEven)); // true
 
+//reduce Array
+//The reduce array method returns a single value based on data in the array. 
+//The method takes a callback function that behaves as a reducer. 
+//Each invocation of the reducer assimilates a new piece of data from the array and updates the reduced value we are building towards.
+
+
+let scores = [
+    {
+        fname: 'Joe',
+        result: 100
+    },
+    {
+        fname: 'Ken',
+        result: 85
+    },
+    {
+        fname: 'Paul',
+        result: 65
+    }
+];
+
+resultSet1 = [66, 78, 99, 100, 42];
+resultSet2 = [45, 67, 59, 89, 77];
+
+//add array result set 1 starting at index 0
+let sum = resultSet1.reduce((acc, val) => {
+    return acc + val;
+
+    //start at index 0
+}, 0);
+
+//console the sum results
+console.log(sum);
+
+//add array result set 2 starting at index 1
+sum = resultSet2.reduce((acc, val) => acc + val);
+//console sum result
+console.log(sum);
+
+
+//get product result from array result set 1  
+let product = resultSet1.reduce((acc, val) => {
+    return acc * val;
+
+});
+
+console.log(product);
+
+//get product result from array result set 2
+product = resultSet2.reduce((acc, val) => acc * val);
+//console sum result
+console.log(product);
+
+//compute average of result set 1
+let average = resultSet1.reduce((acc, val, i, arr) => {
+
+    acc += val;
+    if (1 < arr.length - 1) {
+        return acc;
+
+    } else {
+        return acc / arr.length;
+    }
+});
+
+console.log(average);
