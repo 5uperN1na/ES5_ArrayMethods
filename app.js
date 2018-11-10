@@ -108,8 +108,8 @@ let names = [
 ];
 
 
-let doubleAge = names.map((name) => {
-    return name.age * 2;
+let doubleAge = names.map((x) => {
+    return x.age * 2;
 
 });
 
@@ -198,3 +198,102 @@ let average = resultSet1.reduce((acc, val, i, arr) => {
 });
 
 console.log(average);
+
+//The reduceRight array method behaves similarly to the 'reduce' method, but reduction begins from the right.
+
+resultSet3 = [1, 2, 3, 4];
+
+//get result from array result set 3 using reduce right
+let answer = resultSet3.reduceRight((acc, val) => {
+    return acc - val;
+});
+
+console.log(answer);
+
+//Array.some()
+//The some() method is available on all Arrays. 
+//It is used to test whether at least one of items in an array passes a specified test. 
+//The test is performed by executing a function that you pass into the some() method for the items in the Array.
+
+//example 1
+
+let noEven = [1, 3, 5];
+let oneEven1 = [1, 3, 4, 5];
+
+function isEven(num) {
+    console.log(num);
+
+    return num % 2 === 0;
+}
+
+//console.log(noEven.some(isEven)); // false
+console.log(oneEven1.some(isEven)); // true
+
+
+//example 2
+let noEvens2 = [1, 3, 5];
+let oneEven2 = [1, 3, 4, 5];
+
+console.log(
+    noEvens2.some((age2) => {
+        console.log(num2);
+
+        return num2 % 2 === 0;
+    })
+); // false
+
+console.log(
+    oneEven2.some((age2) => {
+        console.log(num2);
+
+        return num2 % 2 === 0;
+    })
+
+); // true
+
+//example 3
+
+let oddArr = [3, 7, 9];
+let evenArr = [4, 8, 14];
+
+let e = evenArr.some((val) => {
+    return val % 2 === 0;
+});
+console.log(e);
+
+
+
+let o = oddArr.some((val) => {
+    return val % 2 === 0;
+});
+console.log(o);
+
+//example 4
+
+o = oddArr.some(val => val % 2 === 1);
+console.log(o);
+
+//example 5
+
+
+let orders = [
+    {
+        method: 'cash',
+        amt: 100.00
+    },
+    {
+        method: 'card',
+        amt: 85.58
+    },
+    {
+        method: 'cash',
+        amt: 62.33
+    }
+];
+
+let m = orders.some(order => order.method === 'cash');
+//let m = orders.some(val => val.method);
+console.log (m);
+    
+
+
